@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An immersive experience built around the Eden Hore couture collection, on the Otago Central Rail Trail in Ranfurly, Central Otago.">
+<meta property="og:title" content="House of Eden | High Country Couture, Ranfurly">
+<meta property="og:image" content="media/exterior.jpg">
+<title>House of Eden | High Country Couture, Ranfurly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: editorial single column; full-width renders carry the story; a pleated ochre-olive band (from the rail trail installation) divides chapters; investor room gated at the foot */
+:root{
+  --bg:#EFEEE9; --surface:#F9F8F4; --ink:#211B22; --muted:#5F5A5E; --line:#D3CFC7;
+  --plum:#6D2A50; --ochre:#C98A2A; --olive:#6B7536; --on-plum:#FAF3F6;
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17131A; --surface:#201A24; --ink:#EEE8EC; --muted:#A79FA6; --line:#352E3A;
+  --plum:#D08DB3; --ochre:#E2A850; --olive:#A4AE67; --on-plum:#1B1219; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17131A; --surface:#201A24; --ink:#EEE8EC; --muted:#A79FA6; --line:#352E3A;
+  --plum:#D08DB3; --ochre:#E2A850; --olive:#A4AE67; --on-plum:#1B1219; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);margin:0}
+.wrap{max-width:70rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:var(--plum)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+img,video{max-width:100%;display:block}
+.tag{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);display:inline-flex;align-items:center;gap:.6rem}
+.tag::before{content:"";width:1.4rem;height:.5rem;background:repeating-linear-gradient(90deg,var(--ochre) 0 2px,transparent 2px 5px)}
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px}
+.pleat{height:14px;background:repeating-linear-gradient(90deg,var(--ochre) 0 9px,var(--olive) 9px 12px,var(--ochre) 12px 15px,transparent 15px 22px)}
+
+header{border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.1rem;flex-wrap:wrap}
+.mark{font-family:var(--display);font-size:1.35rem;color:var(--ink);text-decoration:none}
+.mark i{color:var(--plum)}
+nav{display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.92rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+nav a.inv{color:var(--plum);font-weight:600}
+
+.hero{padding-block:clamp(2.5rem,6vw,4.5rem) 2rem;display:grid;gap:1.6rem}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);letter-spacing:-.015em}
+.hero h1 em{color:var(--plum)}
+.hero .lede{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--muted);max-width:42rem}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{font:600 .95rem/1 var(--body);padding:.95rem 1.4rem;border-radius:2px;border:1px solid var(--plum);background:var(--plum);color:var(--on-plum);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--plum)}
+.btn:hover{filter:brightness(1.08)}
+.heroimg{margin-top:.5rem}
+.heroimg img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 60%}
+figcaption{font:400 .78rem/1.5 var(--mono);color:var(--muted);margin-top:.6rem}
+
+section{padding-block:clamp(3rem,7vw,5.5rem)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(1.5rem,5vw,4rem)}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+h2{font-size:clamp(2rem,4.4vw,3rem);margin-top:.9rem}
+.prose{display:grid;gap:1rem;max-width:40rem}
+.quiet{color:var(--muted)}
+
+.thesis{font-family:var(--display);font-size:clamp(1.6rem,3.6vw,2.5rem);line-height:1.25;max-width:24ch;text-wrap:balance}
+.thesis em{color:var(--plum)}
+
+.film{background:var(--surface);border-block:1px solid var(--line)}
+.film video{width:100%;aspect-ratio:16/9;background:#000}
+
+.rooms{display:grid;gap:clamp(2.5rem,6vw,4.5rem);margin-top:2.5rem}
+.room-item{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(1.25rem,4vw,3rem);align-items:center}
+.room-item:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.room-item:nth-child(even) figure{order:2}
+@media (max-width:760px){.room-item,.room-item:nth-child(even){grid-template-columns:1fr}.room-item:nth-child(even) figure{order:0}}
+.room-item figure{margin:0}
+.arrive{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:clamp(1rem,3vw,2rem);margin-top:2rem;padding-bottom:clamp(1.5rem,4vw,2.5rem);border-bottom:1px solid var(--line)}
+.arrive figure{margin:0}
+.arrive img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.arrive figcaption{font:400 .95rem/1.55 var(--body);color:var(--muted)}
+.arrive figcaption b{color:var(--ink);font-weight:600}
+.room-item img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.room-item h3{font-size:clamp(1.6rem,3vw,2.1rem);margin:.7rem 0 .7rem}
+.room-item .fabric{font:400 .8rem/1.5 var(--mono);color:var(--olive);margin-top:.8rem}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));border-block:1px solid var(--line);margin-top:2rem}
+.fact{padding:1.2rem 1rem 1.2rem 0;display:grid;gap:.3rem}
+.fact b{font:400 1.7rem/1 var(--display)}
+.fact span{font:400 .78rem/1.4 var(--mono);color:var(--muted)}
+.labels{display:flex;flex-wrap:wrap;gap:.5rem}
+.labels span{font:400 .8rem/1 var(--mono);border:1px solid var(--line);padding:.5rem .7rem;border-radius:2px;background:var(--surface)}
+
+.aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.aud div{background:var(--bg);padding:1.2rem;display:grid;gap:.4rem;align-content:start}
+.aud h3{font-size:1.25rem}
+.aud p{color:var(--muted);font-size:.95rem}
+
+form{display:grid;gap:1rem;max-width:34rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:.35rem;font-size:.85rem;font-weight:500}
+input,select,textarea{font:400 1rem/1.4 var(--body);padding:.75rem .85rem;border:1px solid var(--line);border-radius:2px;background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:5.5rem;resize:vertical}
+.err{color:#B3261E;font-size:.85rem;min-height:1.1em}
+:root[data-theme="dark"] .err{color:#F2B8B5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .err{color:#F2B8B5}}
+.done{border:1px solid var(--ochre);padding:1rem 1.1rem;background:var(--surface);font-size:.95rem}
+.note{font:400 .78rem/1.5 var(--mono);color:var(--muted)}
+
+.gate{background:var(--surface);border:1px solid var(--line);padding:clamp(1.5rem,4vw,2.5rem);display:grid;gap:1.2rem;max-width:40rem}
+.gate .codeRow{display:flex;gap:.6rem;flex-wrap:wrap}
+.gate input{flex:1 1 12rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.inv-room{display:grid;gap:2.5rem}
+.welcome{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:1rem}
+.inv-room h3{font-size:1.5rem;margin-bottom:.8rem}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:30rem;font-size:.95rem}
+th,td{text-align:left;padding:.7rem .8rem .7rem 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 .72rem/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.kpis div{background:var(--bg);padding:1.1rem;display:grid;gap:.35rem}
+.kpis b{font:400 2rem/1 var(--display);color:var(--plum)}
+.kpis span{font-size:.85rem;color:var(--muted)}
+.warn{border-left:3px solid var(--ochre);padding:.9rem 1rem;background:var(--surface);font-size:.9rem;border-radius:0}
+
+footer{padding-block:2.5rem 3rem;color:var(--muted);font-size:.9rem;display:grid;gap:.4rem}
+footer b{color:var(--ink);font-weight:500}
+@media (prefers-reduced-motion:no-preference){.fade{animation:f .5s ease-out both}@keyframes f{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top">House <i>of</i> Eden</a>
+    <nav aria-label="Main">
+      <a href="#film">The film</a>
+      <a href="#inside">Inside</a>
+      <a href="#story">Eden's story</a>
+      <a href="#visit">Visit</a>
+      <a href="#patrons">Founding patrons</a>
+      <a class="inv" href="#investors">Investor access</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <span class="tag">Ranfurly · Maniototo · Otago Central Rail Trail</span>
+      <h1>High Country <em>Couture</em></h1>
+      <p class="lede">Eden Hore's story, told in fabric. House of Eden is a creative play on the textiles, colour and pattern of the Eden Hore collection: the couture a Central Otago sheep farmer gathered from New Zealand's leading designers.</p>
+      <div class="actions">
+        <a class="btn" href="#film">Watch the concept film</a>
+        <a class="btn ghost" href="#patrons">Join the founding patrons list</a>
+      </div>
+    </div>
+    <figure class="heroimg" style="margin-inline:0">
+      <img src="media/exterior.jpg" alt="Concept render of House of Eden on Charlemont Street, with a fabric-patterned Living Couture figure beside the framed front door" width="1600" height="900">
+      <figcaption>Charlemont Street entrance, with the Living Couture sculpture. Concept render by Art of Fact.</figcaption>
+    </figure>
+  </div>
+
+  <section>
+    <div class="wrap split">
+      <div><span class="tag">The idea</span></div>
+      <p class="thesis">Fabric is the storyteller. The <em>patterns, textures and colours</em> of Eden's couture become the walls, screens and light you walk through.</p>
+    </div>
+  </section>
+
+  <section id="film" class="film">
+    <div class="wrap" style="display:grid;gap:1.2rem">
+      <div><span class="tag">Concept film · 2 min</span><h2>Walk through the house.</h2></div>
+      <video controls preload="metadata" playsinline poster="media/exterior.jpg">
+        <source src="media/film.mp4" type="video/mp4">
+        Your browser can't play this video.
+      </video>
+      <p class="note">Concept design by Art of Fact for Lemon Fix. Renders show design intent and will change through detailed design.</p>
+    </div>
+  </section>
+
+  <div class="pleat" aria-hidden="true"></div>
+
+  <section id="inside">
+    <div class="wrap">
+      <span class="tag">Inside the house</span>
+      <h2>Three spaces, one story.</h2>
+      <div class="arrive">
+        <figure><img src="media/cyclepath.jpg" alt="Curved ochre and olive fins along the building's rail trail wall, spelling out High Country Couture" loading="lazy" width="1600" height="900">
+          <figcaption><b>From the rail trail.</b> Curved fins ripple like pleated fabric along the trail side of the building, so riders see it from the saddle.</figcaption></figure>
+        <figure><img src="media/entry.jpg" alt="Curved fabric screen printed with an Eden Hore title over a Central Otago landscape, inside the entry" loading="lazy" width="1600" height="900">
+          <figcaption><b>Through the front door.</b> Past the Living Couture sculpture and a patterned door frame to a fabric screen that sets Eden's story in the Maniototo.</figcaption></figure>
+      </div>
+      <div class="rooms">
+        <article class="room-item">
+          <figure><img src="media/colourfield.jpg" alt="Colour Field room with dress-shaped silhouettes covered in projected floral fabrics, mirrors and a painted high-country backdrop" loading="lazy" width="1600" height="900"></figure>
+          <div>
+            <span class="tag">Space one · The centrepiece</span>
+            <h3>Colour Field</h3>
+            <p class="quiet">A loose framework shaped like the swish of a dress. Projectors play the collection's fabrics across silhouettes, mirrors and visitors themselves, so everyone becomes part of the collection.</p>
+            <p class="fabric">Projection · silhouettes · mirrors · landscape backdrop</p>
+          </div>
+        </article>
+        <article class="room-item">
+          <figure><img src="media/design-dress.jpg" alt="Design your own dress table in front of a wall of patchwork fabric panels in florals, animal prints and geometrics" loading="lazy" width="1600" height="900"></figure>
+          <div>
+            <span class="tag">Space two · Hands on</span>
+            <h3>Design your own dress</h3>
+            <p class="quiet">A patchwork wall of prints and textures, and a table where visitors pick a silhouette and fabric to design a dress of their own.</p>
+            <p class="fabric">Florals · animal print · geometrics · leather · lamé</p>
+          </div>
+        </article>
+        <article class="room-item">
+          <figure><img src="media/backbarn.jpg" alt="The Tractor Shed: reclaimed timber walls, sliding doors, a screen and era furniture" loading="lazy" width="1600" height="900"></figure>
+          <div>
+            <span class="tag">Space three · Where the collection was kept</span>
+            <h3>The Tractor Shed</h3>
+            <p class="quiet">On Glenshee Station, Eden's couture was stored in the tractor shed. This space recreates it with reclaimed timber, sliding doors and era furniture. Visitors sit and watch the Eden Hore documentary in the place where the story was kept.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="pleat" aria-hidden="true"></div>
+
+  <section id="story">
+    <div class="wrap split">
+      <div><span class="tag">Eden's story</span><h2>Ball gowns from a sheep station.</h2></div>
+      <div class="prose">
+        <p>Eden Hore (1919–1997) farmed Glenshee Station near Naseby. Through the 1970s and 1980s he built one of New Zealand's most unexpected fashion collections: more than 270 garments and accessories.</p>
+        <p class="quiet">It began with wool and leather and grew into evening wear, bridal and couture. After his death the family kept the collection together. It is now held by the Central Otago District Council.</p>
+        <div class="labels" aria-label="Designers in the collection">
+          <span>Kevin Berkahn</span><span>Colin Cole</span><span>Lewis Townsend</span><span>Barbara Herrick</span><span>Vinka Lucas</span>
+        </div>
+        <p class="quiet">House of Eden is one stop on a wider Eden Hore story being built across Otago, from <i>Eden in Dunedin</i> at Toitū Otago Settlers Museum through Central Otago to Queenstown. We work with the Council under a memorandum of understanding and run House of Eden independently, under their guidance on the care of the garments.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="facts" aria-label="Key facts">
+        <div class="fact"><b>270+</b><span>garments and accessories</span></div>
+        <div class="fact"><b>1970s–80s</b><span>New Zealand couture</span></div>
+        <div class="fact"><b>Glenshee</b><span>station near Naseby</span></div>
+        <div class="fact"><b>Dunedin → Queenstown</b><span>the Eden Hore trail</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="border-top:1px solid var(--line)">
+    <div class="wrap split">
+      <div><span class="tag">Visit</span><h2>5 Charlemont Street, Ranfurly.</h2></div>
+      <div class="prose">
+        <p>On the Otago Central Rail Trail beside Ranfurly Station, on the same street as Lohi Linen and The Thirsty Moa café and wine bar.</p>
+        <div class="aud">
+          <div><h3>Rail trail riders</h3><p>Already stopping in Ranfurly. A reason to stay longer.</p></div>
+          <div><h3>Groups and hen parties</h3><p>A day out with fashion, food, wine and shopping.</p></div>
+          <div><h3>Fashion travellers</h3><p>A collection you won't see anywhere else in New Zealand.</p></div>
+        </div>
+        <p class="quiet">Building work is planned from winter 2027. Opening date to be announced.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="patrons" style="border-top:1px solid var(--line)">
+    <div class="wrap split">
+      <div><span class="tag">Founding patrons</span><h2>Be first through the door.</h2></div>
+      <div class="prose">
+        <p>Join the list for first access to founding patron passes, preview nights and private group sessions. There's no cost to join.</p>
+        <form id="patronForm" action="https://formspree.io/f/PATRONS_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="House of Eden: new founding patron">
+          <div class="row">
+            <label for="pName">Name<input id="pName" name="name" autocomplete="name" required></label>
+            <label for="pEmail">Email<input id="pEmail" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label for="pInterest">I'm most interested in
+            <select id="pInterest" name="interest">
+              <option>Visiting when it opens</option>
+              <option>A preview night</option>
+              <option>A private group session</option>
+              <option>Becoming a patron of the collection</option>
+            </select>
+          </label>
+          
+          <button class="btn" type="submit">Join the list</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="investors" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div id="gate" class="gate">
+        <span class="tag">Investor access</span>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.4rem);margin-top:0">Private information for invited investors.</h2>
+        <p class="quiet">If you've been given an access code, enter it here. If you'd like one, please contact Russ Haigh directly.</p>
+        <form id="codeForm" novalidate style="max-width:none">
+          <label for="code">Access code</label>
+          <div class="codeRow">
+            <input id="code" name="code" autocomplete="off" placeholder="EDEN-XXXX">
+            <button class="btn" type="submit">Enter</button>
+          </div>
+          <p class="err" id="cErr" aria-live="polite"></p>
+        </form>
+        
+      </div>
+
+      <div id="room" class="inv-room fade" hidden>
+        <div class="welcome">
+          <div><span class="tag">Investor room</span><h2 id="hello" style="margin-top:.6rem">Welcome.</h2></div>
+          <button class="btn ghost" id="lock" type="button">Lock</button>
+        </div>
+
+        <div class="warn"><b>Warning statement.</b> [Placeholder: prescribed small offer warning wording to be supplied by our lawyer.] This information is provided personally to invited investors and is not a public offer.</div>
+
+        <div>
+          <h3>The opportunity</h3>
+          <div class="prose">
+            <p>We're inviting a small group of investors, ideally tourism operators who can bring visitors as well as capital, to take a 49% stake in House of Eden Ltd. Lemon Fix Ltd, which runs Lohi Linen, The Thirsty Moa and rail trail accommodation on Charlemont Street, keeps 51% and runs the business.</p>
+            <p>The collection is held by the Central Otago District Council. Lemon Fix has a memorandum of understanding with the Council to tell the collection's story through an interactive experience. House of Eden operates independently as a commercial business, under the Council's guidance, and sits within the Council's wider Eden Hore trail from Dunedin to Queenstown.</p>
+            <p>The experience is designed by Art of Fact as a creative play on fabric and storytelling. Watch the concept film above for the walk-through.</p>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div><b>~$685k</b><span>Raise target (provisional)</span></div>
+          <div><b>49%</b><span>Offered to investors</span></div>
+          <div><b>2–5</b><span>Investors sought</span></div>
+          <div><b>Mar 2027</b><span>Raise closes</span></div>
+        </div>
+
+        <div>
+          <h3>Structure</h3>
+          <div class="tbl"><table>
+            <thead><tr><th>Term</th><th>Detail</th></tr></thead>
+            <tbody>
+              <tr><td>Entity</td><td>House of Eden Ltd, a new company</td></tr>
+              <tr><td>Shareholding</td><td>Lemon Fix 51%, investors 49%</td></tr>
+              <tr><td>Property</td><td>5 Charlemont Street stays with Lemon Fix and is leased to House of Eden Ltd on commercial terms</td></tr>
+              <tr><td>Governance</td><td>Investors have a board seat or observer rights</td></tr>
+              <tr><td>Build</td><td>Managed by Russ Haigh on a fixed, milestone-based fee, with independent QS sign-off on progress claims</td></tr>
+              <tr><td>Funds</td><td>Held in a lawyer's trust account until the minimum raise is reached</td></tr>
+              <tr><td>Exit</td><td>Buyback option after 5–7 years at a pre-agreed formula</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div>
+          <h3>Use of funds</h3>
+          <div class="tbl"><table>
+            <thead><tr><th>Item</th><th>Amount (NZD)</th></tr></thead>
+            <tbody>
+              <tr><td>Build and fit-out (current estimate)</td><td class="num">$594,550</td></tr>
+              <tr><td>Contingency (15%)</td><td class="num">$89,183</td></tr>
+              <tr><td><b>Raise target</b></td><td class="num"><b>~$683,700</b></td></tr>
+            </tbody>
+          </table></div>
+          <p class="note" style="margin-top:.6rem">Figures are provisional until the business model is updated. Founding patron presales are separate and fund launch marketing and patron deliverables, not the build.</p>
+        </div>
+
+        <div>
+          <h3>Timeline</h3>
+          <div class="tbl"><table>
+            <thead><tr><th>When</th><th>Step</th></tr></thead>
+            <tbody>
+              <tr><td class="num">Nov 2026 – Feb 2027</td><td>Investor conversations</td></tr>
+              <tr><td class="num">By Mar 2027</td><td>Raise closes; company and lease in place</td></tr>
+              <tr><td class="num">Mar – May 2027</td><td>Detailed design, consent, trades booked</td></tr>
+              <tr><td class="num">Winter 2027</td><td>Build begins; founding patron campaign opens</td></tr>
+              <tr><td class="num">Opening</td><td>Patron preview nights, trade famils, public launch</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div>
+          <h3>Why it works</h3>
+          <div class="prose">
+            <p>Operators with a track record: Lemon Fix's Charlemont Street businesses turned over about $261,000 combined in the 12 months to July 2026.</p>
+            <p>A proven audience: the rail trail brings riders past the door, and regional visitor research (Angus &amp; Associates, n=7,208) backs the market.</p>
+            <p>A story already travelling: <i>Eden in Dunedin</i> at Toitū is putting the collection in front of new audiences, the Council's trail links Dunedin to Queenstown, our illustrated book has built a following and a documentary is in production.</p>
+          </div>
+        </div>
+
+        <div>
+          <h3>Request the business plan</h3>
+          <p class="quiet" style="margin-bottom:1rem">Leave your details and Russ will be in touch personally before sending the full plan.</p>
+          <form id="planForm" action="https://formspree.io/f/PLAN_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="House of Eden: business plan request">
+            <div class="row">
+              <label for="rName">Name<input id="rName" name="name" autocomplete="name" required></label>
+              <label for="rOrg">Business (optional)<input id="rOrg" name="org" autocomplete="organization"></label>
+            </div>
+            <div class="row">
+              <label for="rEmail">Email<input id="rEmail" name="email" type="email" autocomplete="email" required></label>
+              <label for="rPhone">Phone (optional)<input id="rPhone" name="phone" type="tel" autocomplete="tel"></label>
+            </div>
+            <label for="rNote">Anything you'd like us to know<textarea id="rNote" name="note"></textarea></label>
+            
+            <button class="btn" type="submit">Request the plan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pleat" aria-hidden="true"></div>
+  <footer class="wrap">
+    <b>House of Eden</b>
+    <span>A Lemon Fix Ltd project · 8 Charlemont Street, Ranfurly, Central Otago</span>
+    <span>Concept design by Art of Fact</span>
+    <span>Contact: Russ Haigh · hello@houseofedenranfurly.co.nz</span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var CODES = { "EDEN-DEMO": "Welcome." };
+
+  var gate = document.getElementById('gate'), room = document.getElementById('room');
+  var cf = document.getElementById('codeForm'), ce = document.getElementById('cErr'), ci = document.getElementById('code');
+  ci.addEventListener('input', function(){ ce.textContent = ''; });
+  cf.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var c = ci.value.trim().toUpperCase();
+    if (!c){ ce.textContent = 'Enter your access code.'; return; }
+    if (!CODES[c]){ ce.textContent = "That code isn't recognised. Check it or contact Russ for a new one."; return; }
+    document.getElementById('hello').textContent = CODES[c];
+    gate.hidden = true; room.hidden = false; room.scrollIntoView({block:'start'});
+  });
+  document.getElementById('lock').addEventListener('click', function(){
+    room.hidden = true; gate.hidden = false; ci.value = ''; ci.focus();
+  });
+})();
+</script>
+
+</body>
+</html>
