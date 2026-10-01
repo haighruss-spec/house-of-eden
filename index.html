@@ -141,6 +141,11 @@ footer b{color:var(--ink);font-weight:500}
 }
 .voice p:first-child{font-family:var(--display);font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.3;color:var(--ink)}
 .sig{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--plum)}
+.tiers{display:grid;border-top:1px solid var(--line);margin:.25rem 0}
+.tiers div{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:.25rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.tiers b{font:400 1.15rem/1.3 var(--display)}
+.tiers span{color:var(--muted);font-size:.95rem}
+@media (max-width:520px){.tiers div{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -248,7 +253,10 @@ footer b{color:var(--ink);font-weight:500}
         <p class="quiet">I didn't have the words for it then: the colour, the drama, the care he'd taken with every piece. It stayed with me through years of sewing, alterations and dressmaking, and forty years later it became Lohi.</p>
         <p class="quiet">Russ and I came to Ranfurly because we loved the place. We restored the old drapery on Charlemont Street, and two garments from Eden's collection are on display there today: one by Vinka Lucas, and one by Pat Hewitt of Alexandra, whose One Only label made one-off pieces. House of Eden is how we give other people the moment I had in that shed.</p>
         <p class="sig">Tania</p>
-        <p><a href="https://lohilinen.com/pages/the-shed-that-started-everything">Read the full story at Lohi Linen</a></p>
+        <div class="actions" style="align-items:center;gap:.8rem 1.2rem">
+          <a class="btn" href="#patrons">Join the founding patrons</a>
+          <a href="https://lohilinen.com/pages/the-shed-that-started-everything">Read the full story at Lohi Linen</a>
+        </div>
       </div>
     </div>
   </section>
@@ -296,24 +304,35 @@ footer b{color:var(--ink);font-weight:500}
 
   <section id="patrons" style="border-top:1px solid var(--line)">
     <div class="wrap split">
-      <div><span class="tag">Founding patrons</span><h2>Be first through the door.</h2></div>
+      <div><span class="tag">Founding patrons</span><h2>Be one of the first to have that moment.</h2></div>
       <div class="prose">
-        <p>Join the list for first access to founding patron passes, preview nights and private group sessions. There's no cost to join.</p>
+        <p>We want the first people through the door to be the ones who believed in this early. Founding patrons get passes, preview nights and private sessions before House of Eden opens to the public.</p>
+        <p class="quiet">Joining the list costs nothing and commits you to nothing. You'll hear from us first when patron places open.</p>
+        <div class="tiers" aria-label="Planned founding patron tiers">
+          <div><b>Friend of Eden</b><span>An entry pass and your name on the digital patron wall.</span></div>
+          <div><b>Founding Patron</b><span>Two passes, a preview night invitation and your name on the patron wall.</span></div>
+          <div><b>Couture Circle</b><span>Four passes, a private preview evening with wine at The Thirsty Moa, and a signed book.</span></div>
+          <div><b>Atelier Group</b><span>A private session for up to 12, with a grazing platter from The Thirsty Moa. Made for hen parties and groups.</span></div>
+          <div><b>Patron of the Collection</b><span>Limited to ten. Your name on a gallery and an annual private evening.</span></div>
+        </div>
+        <p class="note">These are the tiers we're planning. Details and prices will be confirmed before patron places open.</p>
         <form id="patronForm" action="https://formspree.io/f/xvkgyjkw" method="POST">
           <input type="hidden" name="_subject" value="House of Eden: new founding patron">
           <div class="row">
             <label for="pName">Name<input id="pName" name="name" autocomplete="name" required></label>
             <label for="pEmail">Email<input id="pEmail" name="email" type="email" autocomplete="email" required></label>
           </div>
-          <label for="pInterest">I'm most interested in
+          <label for="pInterest">Which interests you most?
             <select id="pInterest" name="interest">
-              <option>Visiting when it opens</option>
-              <option>A preview night</option>
-              <option>A private group session</option>
-              <option>Becoming a patron of the collection</option>
+              <option>Not sure yet, keep me posted</option>
+              <option>Friend of Eden</option>
+              <option>Founding Patron</option>
+              <option>Couture Circle</option>
+              <option>Atelier Group</option>
+              <option>Patron of the Collection</option>
             </select>
           </label>
-          
+
           <button class="btn" type="submit">Join the list</button>
         </form>
       </div>
