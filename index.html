@@ -32,7 +32,7 @@ body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);m
 a{color:var(--plum)}
 h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
 p{margin:0}
-img,video{max-width:100%;display:block}
+img,video{max-width:100%;height:auto;display:block}
 .tag{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);display:inline-flex;align-items:center;gap:.6rem}
 .tag::before{content:"";width:1.4rem;height:.5rem;background:repeating-linear-gradient(90deg,var(--ochre) 0 2px,transparent 2px 5px)}
 :focus-visible{outline:2px solid var(--plum);outline-offset:3px}
@@ -131,6 +131,14 @@ td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:now
 footer{padding-block:2.5rem 3rem;color:var(--muted);font-size:.9rem;display:grid;gap:.4rem}
 footer b{color:var(--ink);font-weight:500}
 @media (prefers-reduced-motion:no-preference){.fade{animation:f .5s ease-out both}@keyframes f{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}}
+@media (max-width:600px){
+  .bar{padding-block:.8rem;gap:.5rem}
+  nav{gap:.4rem 1rem;font-size:.85rem}
+  .hero{padding-block:1.6rem 1.25rem;gap:1.1rem}
+  .hero h1{font-size:2.35rem}
+  .hero .lede{font-size:1rem}
+  .btn{padding:.8rem 1.1rem;font-size:.9rem}
+}
 </style>
 </head>
 <body>
