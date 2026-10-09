@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: editorial single column; full-width renders carry the story; a pleated ochre-olive band (from the rail trail installation) divides chapters; investor room gated at the foot */
+/* Layout: editorial single column; full-width renders carry the story; a pleated ochre-olive band (from the rail trail installation) divides chapters; investor enquiry form at the foot */
 :root{
   --bg:#EFEEE9; --surface:#F9F8F4; --ink:#211B22; --muted:#5F5A5E; --line:#D3CFC7;
   --plum:#6D2A50; --ochre:#C98A2A; --olive:#6B7536; --on-plum:#FAF3F6;
@@ -160,7 +160,7 @@ footer b{color:var(--ink);font-weight:500}
       <a href="#story">Eden's story</a>
       <a href="#visit">Visit</a>
       <a href="#patrons">Founding patrons</a>
-      <a class="inv" href="#investors">Investor access</a>
+      <a class="inv" href="#investors">Investors</a>
     </nav>
   </div>
 </header>
@@ -341,160 +341,35 @@ footer b{color:var(--ink);font-weight:500}
 
   <section id="investors" style="border-top:1px solid var(--line)">
     <div class="wrap">
-      <div id="gate" class="gate">
-        <span class="tag">Investor access</span>
-        <h2 style="font-size:clamp(1.8rem,4vw,2.4rem);margin-top:0">Private information for invited investors.</h2>
-        <p class="quiet">If you've been given an access code, enter it here. If you'd like one, please contact Russ Haigh directly.</p>
-        <form id="codeForm" novalidate style="max-width:none">
-          <label for="code">Access code</label>
-          <div class="codeRow">
-            <input id="code" name="code" autocomplete="off" placeholder="Enter your code">
-            <button class="btn" type="submit">Enter</button>
-          </div>
-          <p class="err" id="cErr" aria-live="polite"></p>
-        </form>
-        
-      </div>
-
-      <div id="room" class="inv-room fade" hidden>
-        <div class="welcome">
-          <div><span class="tag">Investor room</span><h2 id="hello" style="margin-top:.6rem">Welcome.</h2></div>
-          <button class="btn ghost" id="lock" type="button">Lock</button>
+      <span class="tag">Investors</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem);margin-top:0">Talk to us about House of Eden.</h2>
+      <p class="quiet" style="margin-bottom:1rem">We're speaking personally with a small number of people about investing in House of Eden. Leave your details and Russ will be in touch. Nothing on this website is an offer of financial products.</p>
+      <form id="planForm" action="https://formspree.io/f/myezvqwz" method="POST">
+        <input type="hidden" name="_subject" value="House of Eden: investor enquiry">
+        <div class="row">
+          <label for="rName">Name<input id="rName" name="name" autocomplete="name" required></label>
+          <label for="rOrg">Business (optional)<input id="rOrg" name="org" autocomplete="organization"></label>
         </div>
-
-        <div class="warn"><b>Warning statement.</b> [Placeholder: prescribed small offer warning wording to be supplied by our lawyer.] This information is provided personally to invited investors and is not a public offer.</div>
-
-        <div>
-          <h3>Our story</h3>
-          <div class="prose voice">
-            <p>I was eight when I first walked into Eden Hore's tractor shed.</p>
-            <p>He was a sheep farmer near Naseby with an eye for beauty, and the shed was full of couture. I didn't have the words for it then, but I never forgot it.</p>
-            <p>I grew up around sewing machines and ran an alteration and dressmaking business for years. It took forty years for what that shed planted to become Lohi.</p>
-            <p>Russ and I moved to Ranfurly because we loved it. We restored the old drapery on Charlemont Street and opened Lohi Linen and The Thirsty Moa. Two garments from Eden's collection are on display at Lohi today, one by Vinka Lucas and one by Pat Hewitt of Alexandra under her One Only label, and we hold a memorandum of understanding with the Council to tell his story.</p>
-            <p>House of Eden is the next step, and its third space is the tractor shed. We want every visitor to have the moment I had at eight.</p>
-            <p class="sig">Tania and Russ</p>
-          </div>
+        <div class="row">
+          <label for="rEmail">Email<input id="rEmail" name="email" type="email" autocomplete="email" required></label>
+          <label for="rPhone">Phone (optional)<input id="rPhone" name="phone" type="tel" autocomplete="tel"></label>
         </div>
-
-        <div>
-          <h3>The invitation</h3>
-          <div class="prose">
-            <p>We're looking for a few people to build this with us: a small group of investors, ideally tourism operators who can bring visitors as well as capital, to take a 49% stake in House of Eden Ltd. Lemon Fix Ltd, which runs Lohi Linen, The Thirsty Moa and rail trail accommodation on Charlemont Street, keeps 51% and runs the business.</p>
-            <p>The collection is held by the Central Otago District Council. House of Eden operates independently as a commercial business, under the Council's guidance, and sits within the Council's wider Eden Hore trail from Dunedin to Queenstown.</p>
-            <p>The experience is designed by Art of Fact as a creative play on fabric and storytelling. Watch the concept film above for the walk-through.</p>
-          </div>
-        </div>
-
-        <div class="kpis">
-          <div><b>~$685k</b><span>Raise target (provisional)</span></div>
-          <div><b>49%</b><span>Offered to investors</span></div>
-          <div><b>2–5</b><span>Investors sought</span></div>
-          <div><b>Mar 2027</b><span>Raise closes</span></div>
-        </div>
-
-        <div>
-          <h3>Structure</h3>
-          <div class="tbl"><table>
-            <thead><tr><th>Term</th><th>Detail</th></tr></thead>
-            <tbody>
-              <tr><td>Entity</td><td>House of Eden Ltd, a new company</td></tr>
-              <tr><td>Shareholding</td><td>Lemon Fix 51%, investors 49%</td></tr>
-              <tr><td>Property</td><td>5 Charlemont Street stays with Lemon Fix and is leased to House of Eden Ltd on commercial terms</td></tr>
-              <tr><td>Governance</td><td>Investors have a board seat or observer rights</td></tr>
-              <tr><td>Build</td><td>Managed by Russ Haigh on a fixed, milestone-based fee, with independent QS sign-off on progress claims</td></tr>
-              <tr><td>Funds</td><td>Held in a lawyer's trust account until the minimum raise is reached</td></tr>
-              <tr><td>Exit</td><td>Buyback option after 5–7 years at a pre-agreed formula</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-
-        <div>
-          <h3>Use of funds</h3>
-          <div class="tbl"><table>
-            <thead><tr><th>Item</th><th>Amount (NZD)</th></tr></thead>
-            <tbody>
-              <tr><td>Build and fit-out (current estimate)</td><td class="num">$594,550</td></tr>
-              <tr><td>Contingency (15%)</td><td class="num">$89,183</td></tr>
-              <tr><td><b>Raise target</b></td><td class="num"><b>~$683,700</b></td></tr>
-            </tbody>
-          </table></div>
-          <p class="note" style="margin-top:.6rem">Figures are provisional until the business model is updated. Founding patron presales are separate and fund launch marketing and patron deliverables, not the build.</p>
-        </div>
-
-        <div>
-          <h3>Timeline</h3>
-          <div class="tbl"><table>
-            <thead><tr><th>When</th><th>Step</th></tr></thead>
-            <tbody>
-              <tr><td class="num">Nov 2026 – Feb 2027</td><td>Investor conversations</td></tr>
-              <tr><td class="num">By Mar 2027</td><td>Raise closes; company and lease in place</td></tr>
-              <tr><td class="num">Mar – May 2027</td><td>Detailed design, consent, trades booked</td></tr>
-              <tr><td class="num">Winter 2027</td><td>Build begins; founding patron campaign opens</td></tr>
-              <tr><td class="num">Opening</td><td>Patron preview nights, trade famils, public launch</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-
-        <div>
-          <h3>Why it works</h3>
-          <div class="prose">
-            <p>Operators with a track record: since opening in January 2024 we've restored the old drapery on Charlemont Street and built three businesses there: Lohi Linen with 40+ local brands, The Thirsty Moa café and wine bar, and rail trail accommodation.</p>
-            <p>A proven audience: the rail trail brings riders past the door, and regional visitor research (Angus &amp; Associates, n=7,208) backs the market.</p>
-            <p>A story already travelling: <i>Eden in Dunedin</i> at Toitū is putting the collection in front of new audiences, the Council's trail links Dunedin to Queenstown, our illustrated book has built a following and a documentary is in production.</p>
-          </div>
-        </div>
-
-        <div>
-          <h3>Request the business plan</h3>
-          <p class="quiet" style="margin-bottom:1rem">Leave your details and Russ will be in touch personally before sending the full plan.</p>
-          <form id="planForm" action="https://formspree.io/f/myezvqwz" method="POST">
-            <input type="hidden" name="_subject" value="House of Eden: business plan request">
-            <div class="row">
-              <label for="rName">Name<input id="rName" name="name" autocomplete="name" required></label>
-              <label for="rOrg">Business (optional)<input id="rOrg" name="org" autocomplete="organization"></label>
-            </div>
-            <div class="row">
-              <label for="rEmail">Email<input id="rEmail" name="email" type="email" autocomplete="email" required></label>
-              <label for="rPhone">Phone (optional)<input id="rPhone" name="phone" type="tel" autocomplete="tel"></label>
-            </div>
-            <label for="rNote">Anything you'd like us to know<textarea id="rNote" name="note"></textarea></label>
-            
-            <button class="btn" type="submit">Request the plan</button>
-          </form>
-        </div>
-      </div>
+        <label for="rNote">Anything you'd like us to know<textarea id="rNote" name="note"></textarea></label>
+        <button class="btn" type="submit">Get in touch</button>
+      </form>
     </div>
   </section>
 
   <div class="pleat" aria-hidden="true"></div>
   <footer class="wrap">
     <b>House of Eden</b>
-    <span>A Lemon Fix Ltd project · 8 Charlemont Street, Ranfurly, Central Otago</span>
+    <span>A Lemon Fix Ltd project · Venue: 5 Charlemont Street · Office: 8 Charlemont Street, Ranfurly, Central Otago</span>
     <span>Concept design by Art of Fact</span>
     <span>Contact: Russ Haigh · hello@houseofedenranfurly.co.nz</span>
   </footer>
 </main>
 
-<script>
-(function(){
-  var CODES = { "EDEN2027": "Welcome." };
 
-  var gate = document.getElementById('gate'), room = document.getElementById('room');
-  var cf = document.getElementById('codeForm'), ce = document.getElementById('cErr'), ci = document.getElementById('code');
-  ci.addEventListener('input', function(){ ce.textContent = ''; });
-  cf.addEventListener('submit', function(ev){
-    ev.preventDefault();
-    var c = ci.value.trim().toUpperCase();
-    if (!c){ ce.textContent = 'Enter your access code.'; return; }
-    if (!CODES[c]){ ce.textContent = "That code isn't recognised. Check it or contact Russ for a new one."; return; }
-    document.getElementById('hello').textContent = CODES[c];
-    gate.hidden = true; room.hidden = false; room.scrollIntoView({block:'start'});
-  });
-  document.getElementById('lock').addEventListener('click', function(){
-    room.hidden = true; gate.hidden = false; ci.value = ''; ci.focus();
-  });
-})();
-</script>
 
 </body>
 </html>
