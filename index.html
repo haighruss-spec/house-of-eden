@@ -2,6 +2,14 @@
 <html lang="en-NZ">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B0T10BY7Y9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B0T10BY7Y9');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="An immersive experience built around the Eden Hore couture collection, on the Otago Central Rail Trail in Ranfurly, Central Otago.">
 <meta property="og:title" content="House of Eden | High Country Couture, Ranfurly">
@@ -372,5 +380,14 @@ footer b{color:var(--ink);font-weight:500}
 
 
 
+<script>
+  // Record enquiry and patron form submissions as leads in Google Analytics
+  [['planForm','investor_enquiry'],['patronForm','patron_signup']].forEach(function(f){
+    var el=document.getElementById(f[0]);
+    if(el) el.addEventListener('submit',function(){
+      if(window.gtag) gtag('event','generate_lead',{form_name:f[1],transport_type:'beacon'});
+    });
+  });
+</script>
 </body>
 </html>
